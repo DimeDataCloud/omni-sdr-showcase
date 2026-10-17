@@ -77,8 +77,8 @@ non-owner roles, so they can't switch row-level security off.
 
 **The model never gets the last word.** Gemini drafts. The gate that checks each draft is
 deterministic: no model call, no clock read, same input, same verdict. The decision model answers
-typed questions with probabilities. Its thresholds were fitted on a held-out set of 89
-replies: the stop question catches 16 of 17 opt-outs, and the meeting question 13 of 14 meeting
+typed questions with probabilities. Its thresholds were fitted on a held-out set of replies:
+the stop question catches most opt-outs, and the meeting question catches most meeting
 requests, tuned for recall because a false "meeting" only puts a reply in front of a person sooner.
 
 **Built by two agents that audit each other.** Two Claude Code sessions build Omni under one
@@ -98,9 +98,9 @@ Puppeteer quality gates.
 | | |
 |---|---|
 | Tests | **283** passing in the gate, database, API, decision-engine, enricher and proxy suites (measured 2026-10-07) |
-| Gate sabotage suite | **22 of 22** seeded bad drafts blocked, each for the expected reason |
-| Schema | **19** migrations, row-level security forced on tenant tables |
-| Quality gates | **36** visual baselines (12 pages, light and dark, desktop and phone), plus axe, keyboard tab-walk, input latency and bundle budget |
+| Gate sabotage suite | Every seeded bad draft blocked, each for the expected reason |
+| Schema | Versioned migrations, row-level security forced on tenant tables |
+| Quality gates | Visual baselines across the main pages, in light and dark, desktop and phone, plus axe, keyboard tab-walk, input latency and bundle budget |
 
 ## Credits
 
